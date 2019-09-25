@@ -17,11 +17,6 @@ class FirebaseForm extends Component {
   };
 
   onLogInSubmit = () => {
-    auth
-      .doSignInWithEmailAndPassword(this.state.email, this.state.password)
-      .then(res => {
-        console.log(res, "the res");
-      });
     // if (this.state.email && this.state.password) {
     //   firebase.doSignInWithEmailAndPassword(
     //     this.state.email,
@@ -34,7 +29,7 @@ class FirebaseForm extends Component {
     auth
       .doCreateUserWithEmailAndPassword(this.state.email, this.state.password)
       .then(res => {
-        console.log(res);
+        debugger;
       });
     // if (this.state.email && this.state.password) {
     //   firebase
@@ -46,9 +41,6 @@ class FirebaseForm extends Component {
   };
 
   onSignOutSubmit = () => {
-    auth.doSignOut().then(() => {
-      console.log("you are logged out");
-    });
     // if (this.state.email && this.state.password) {
     //   firebase.doSignOut();
     // }
